@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>
+            Excel file upload and processing
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    </head>
+    <body style="margin-top: 10px;margin-left: 30px;">
+        <form action="{% url "dashboard:index" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file"
+                   title="Upload excel file"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+        <p></p>
+        <hr>
+<table class="table table-bordered">
+    <thead>
+
+    </thead>
+    <tbody>
+
+
+        {% for row in excel_data %}
+        <tr>
+            {% for cell in row %}
+
+
+               <td>{{ cell }}&nbsp;&nbsp;</td>
+
+
+            {% endfor %}
+         </tr>
+            <br><br>
+        {% endfor %}
+    </tbody>
+    </body>
