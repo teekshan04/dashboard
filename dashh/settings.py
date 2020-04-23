@@ -25,7 +25,7 @@ SECRET_KEY = 'q)0^trwwk(5lk+&k%lk)l(+4-xh$+^q-pn2$_%nvem7j-f)ao@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,10 +79,11 @@ WSGI_APPLICATION = 'dashh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'liveedu',
-        'USER': 'root',
-        'PASSWORD': 'icuerious',
-        'HOST': 'localhost'
+        'NAME': 'test_project_db',
+        'USER': 'admin',
+        'PASSWORD': 'teekshan',
+        'HOST': 'teekshan-database.cp1jquevopjf.us-east-2.rds.amazonaws.comlocalhost'
+        'PORT': '3306'
     }
 }
 
