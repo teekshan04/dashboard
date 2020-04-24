@@ -82,8 +82,8 @@ DATABASES = {
         'NAME': 'test_project_db',
         'USER': 'admin',
         'PASSWORD': 'teekshan',
-        'HOST': 'teekshan-database.cp1jquevopjf.us-east-2.rds.amazonaws.comlocalhost'
-        'PORT': '3306'
+        'HOST': 'teekshan-database.cp1jquevopjf.us-east-2.rds.amazonaws.comlocalhost',
+        'PORT': '3306',
     }
 }
 
