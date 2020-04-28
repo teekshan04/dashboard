@@ -36,11 +36,10 @@ def index(request):
             if rownum == 0:
                 rownum += 1
             else:
-                the_row = models.report( No =row[0], Title=row[1], Inventors=row[2], Applicants=row[3],
-                                         IPC=row[4], CPC=row[5], Country=row[6], Publication_number=row[7],
-                                          Publication_Year=row[8],
-                                         Earliest_publication=row[9],Family_number=row[10],
-                                        Earliest_priority=row[11]
+                the_row = models.report( No =row[NO], Title=row[TITLE], Inventors=row[INVENTORS], Applicants=row[APPLICANTS],
+                                         Publication_number=row[PUBLICATION_NUMBER], Country=row[COUNTRY], Earliest_priority=row[EARLIEST_PRIORITY],
+                                         IPC=row[ipc],CPC=row[cpc], Publication_date=row[PUBLICATION_DATE], Publication_Year=row[PUBLICATION_YEAR],
+                                         Earliest_publication=row[EARLIEST_PUBLICATION],Family_number=row[FAMILY_NUMBER]
                                          )
 
                 the_row.save()
