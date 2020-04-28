@@ -3,7 +3,19 @@ from django.shortcuts import render
 import openpyxl
 #import importer as imp
 from .import models
-
+NO = 0
+TITLE = 1
+INVENTORS = 2
+APPLICANTS = 3
+PUBLICATION_NUMBER = 4
+COUNTRY = 5
+EARLIEST_PRIORITY = 6
+ipc = 7
+cpc = 8
+PUBLICATION_DATE = 9
+PUBLICATION_YEAR = 10
+EARLIEST_PUBLICATION = 11
+FAMILY_NUMBER = 12
 
 def index(request):
     if "GET" == request.method:
