@@ -44,14 +44,16 @@ def index(request):
                 row_data.append(str(cell.value))
             excel_data.append(row_data)
         rownum = 0
-        for row in worksheet.iter_rows():
-            if rownum == 0:
+        for row in worksheet.iter_rows(values_only=True):
+             header = []
+             if rownum == 0:
+                header.append(row)
                 rownum += 1
-            else:
-                the_row = models.report( No =row[NO], Title=row[TITLE], Inventors=row[INVENTORS], Applicants=row[APPLICANTS],
-                                         Publication_number=row[PUBLICATION_NUMBER], Country=row[COUNTRY], Earliest_priority=row[EARLIEST_PRIORITY],
-                                         IPC=row[ipc],CPC=row[cpc], Publication_date=row[PUBLICATION_DATE], Publication_Year=row[PUBLICATION_YEAR],
-                                         Earliest_publication=row[EARLIEST_PUBLICATION],Family_number=row[FAMILY_NUMBER]
+             else:
+                the_row = models.report( No =row[0], Title=row[1], Inventors=row[2], Applicants=row[3],
+                                         Publication_number=row[4], Country=row[5], Earliest_priority=row[6],
+                                         IPC=row[7],CPC=row[8], Publication_date=row[9], Publication_Year=row[10],
+                                         Earliest_publication=row[11],Family_number=row[12]
                                          )
 
                 the_row.save()
