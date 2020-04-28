@@ -16,7 +16,7 @@ def index(request):
 
         print('teekshan')
         wb = openpyxl.load_workbook(excel_file)
-        worksheet = wb["Sheet1"]
+        worksheet = wb.active
 
 
         # getting a particular sheet by name out of many sheets
